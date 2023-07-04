@@ -1,12 +1,21 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>AR_Softwares</groupId>
-  <artifactId>AR_Softwares</artifactId>
-  <version>4.0.0</version>
-  <packaging>war</packaging>
- 
- 
-  
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+        <modelVersion>4.0.0</modelVersion>
+        <parent>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-parent</artifactId>
+                <version>2.3.3.RELEASE</version>
+                <relativePath>{project_name}/pom.xml</relativePath> <!-- lookup parent from repository -->
+        </parent>
+        <groupId>com.javatechie</groupId>
+        <artifactId>arjun-application</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <name>arjun-application</name>
+        <packaging>jar</packaging>
+        <description>AR Softwares CI/CD using AWS CodePipeline</description>
+
+
+
   <dependencies>
 		<!-- https://mvnrepository.com/artifact/javax/javaee-web-api -->
 		<dependency>
@@ -98,5 +107,6 @@
         <version>3.2.3</version>
       </plugin>
     </plugins>
+	  <finalName>arjun-application</finalName>
   </build>
 </project>
