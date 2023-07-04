@@ -16,5 +16,5 @@ phases:
     - mv target/arjun-application.jar arjun-application.jar
 artifacts:
   files:
-  - arjun-application.jar
-  - .ebextensions/**/*
+    - target/arjun-application.jar
+  discard-paths: yes
