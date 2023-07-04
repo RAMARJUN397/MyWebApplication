@@ -16,5 +16,5 @@ phases:
     - mv target/AR_Softwares-4.0.0.war AR_Softwares-4.0.0.war
 artifacts:
   files:
-  - AR_Softwares-0.0.1-SNAPSHOT.war
+  - AR_Softwares-4.0.0.war
   - .ebextensions/**/*
