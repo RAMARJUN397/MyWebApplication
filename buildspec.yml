@@ -12,9 +12,9 @@ phases:
   post_build:
     commands:
     - echo Build completed on `date`
-    - mvn war:war
-    - mv target/AR_Softwares-4.0.0.war AR_Softwares-4.0.0.war
+    - mvn clean install
+    - mv target/arjun-application.jar arjun-application.jar
 artifacts:
   files:
-  - AR_Softwares-4.0.0.war
+  - arjun-application.jar
   - .ebextensions/**/*
