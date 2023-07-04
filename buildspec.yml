@@ -12,7 +12,7 @@ phases:
   post_build:
     commands:
     - echo Build completed on `date`
-    - mvn package
+    - mvn war:war
     - mv target/AR_Softwares-0.0.1-SNAPSHOT.war AR_Softwares-0.0.1-SNAPSHOT.war
 artifacts:
   files:
