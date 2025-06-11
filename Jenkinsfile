@@ -1,36 +1,23 @@
 pipeline {
     agent any
-    //agent any { docker { image 'maven:3.9.9-eclipse-temurin-21-alpine' } }
-     tools{
-    maven "M2VEN"
-   }
+    parameters {
+        string(name: 'RUN_STAGE', defaultValue: 'stage1', description: 'Specify the stage to run')
+    }
     stages {
-        stage('SCM') {
+        stage('stage1') {
+            when {
+                expression { params.RUN_STAGE == 'stage1' }
+            }
             steps {
-                echo 'SCM'
-                git branch: 'argroups', url: 'https://github.com/RAMARJUN397/MyWebApplication.git'
+                echo 'Running Stage 1'
             }
         }
-        stage('Compile'){
-            steps{
-                bat 'mvn compile'
-                echo 'Code Successfully Compiled By Maven'
+        stage('stage2') {
+            when {
+                expression { params.RUN_STAGE == 'stage2' }
             }
-        }
-         stage('Test'){
-            steps{
-                bat 'mvn test'
-            }
-        }
-         stage('Build'){
-            steps{
-                bat 'mvn war:war'
-            }
-        }
-        stage('SMOKE Test'){
-            steps{
-                echo 'Deploying in Tomcat for Smoke test'
-                deploy adapters: [tomcat9(credentialsId: 'TOMCATCRED', path: '', url: 'http://localhost:8081/')], contextPath: 'mydev', war: '**/*.war'
+            steps {
+                echo 'Running Stage 2'
             }
         }
     }
